@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+body {
+    margin: 2em;
+    font-family: helvetica, verdana, arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+body p {
+  padding: 0.8em;
+}
+
+header {
+  height: ;
+  overflow: hidden;
+}
+
+#header-pic {
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+}
+
+section {
+  margin: 0.5em 0em;
+  padding: 1em;
+  border: thick solid #F24162;
+}
+
+h1, h2 {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  position: absolute;
+  margin-top: -50%;
+  margin-left: 0.1em;
+  font-size: 3em;
+  padding: 0.7em 14%;
+  background-color: #F24162;
+  opacity: 0.9;
+}
+
+h2 {
+  font-size: 2.5em;
+  padding: 1em 0.5em;
+}
+
+h3 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 1em;
+}
+
+.burgers {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #fff;
+  color: #F24162;
+  grid-template-areas:
+    "basic boring chicken"
+}
+
+.burger {
+  border: thick solid #f2f2f2;
+  color: #0D0D0D;
+  border-radius: 5px;
+  text-align: center;
+}
+
+h3, .burger ul { background-color: #f2f2f2; }
+
+.burger ul {
+  text-align: left;
+  padding: 1em;
+}
+
+.basic {
+    grid-area: basic;
+}
+.boring {
+    grid-area: boring;
+}
+.chicken {
+    grid-area: chicken;
+}
+.d {
+    grid-column: 2 ;
+    grid-row: 2 ;
+}
+
+.burger-pics { text-align: center; }
+
+.ingredients { font-weight: bold; }
+
+#information {
+  padding: 1em;
+  background-color: #F24162;
+  color: #f2f2f2;
+}
+
+button {
+  padding: 1em;
+  margin: 1em;
+}
+
+button:hover {
+  border-style: solid;
+  border-width: thick;
+  border-color: #0d0d0d;
+  cursor: pointer;
+}
