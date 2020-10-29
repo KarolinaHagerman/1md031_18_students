@@ -1,9 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Page title shown in window title</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+      <header>
+        <img id="header-pic" src="https://visitrattvik.se/wp-content/uploads/2019/11/diner45-restaurang-rattvik-9-1.jpg"
+          alt="The inside of BurgerHeaven" title="BurgerHeaven">
+        <h1>Welcome to BurgerHeaven Online</h1>
+      </header>
+      <main>
+        <section id="selection">
+          <h2>Select burger</h2>
+            <p>
+              This is where you execute burger selection
+            </p>
+
+            <div class="burgers">
+              <div class="basic burger">
+                <h3>Basic Burger</h3>
+                  <img src="https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png"
+                  alt="Basic Burger, a burger with meat, cheese, tomato, lettuce and onion"
+                  title="Basic Burger" width="200">
+                  <ul>
+                      <li>750 kCal</li>
+                      <li class="ingredients">Contains meat, gluten and lactose</li>
+                      <li>Perfect if you want to be basic</li>
+                  </ul>
+              </div>
+              <div class="boring burger">
+                <h3>Boring Burger</h3>
+                  <img src="https://www.max.se/contentassets/c02201e316004a52a08daff936eaa7c9/product_veggieburger.png"
+                  alt="Boring Burger, a burger with only meat and lettuce"
+                  title="Boring Burger" width="200">
+                  <ul>
+                      <li>500 kCal</li>
+                      <li class="ingredients">Contains meat, gluten and lactose</li>
+                      <li>Perfect if you want to really boring</li>
+                  </ul>
+              </div>
+              <div class="chicken burger">
+                <h3>Chicken Burger</h3>
+                  <img src="https://www.max.se/contentassets/23e325ee1e224f1e9ea8314c346e34c3/product_grilled-chicken-burger.png"
+                  alt="Chicken Burger, a burger with chicken, cheese, tomato, lettue and onion"
+                  title="Chicken Burger" width="200">
+                  <ul>
+                      <li>850 kCal</li>
+                      <li class="ingredients">Contains chicken, gluten and lactose</li>
+                      <li>Perfect if you want to be a chicken</li>
+                  </ul>
+              </div>
+           </div>
+        </section>
+
+        <section id="information">
+          <h2>Customer information</h2>
+            <p>
+              This is where you provide necessary information
+            </p>
+
+            <form method="POST" action="#">
+                        <fieldset>
+                            <p>
+                              <label for="name">Full name:</label><br>
+                              <input type="text" id="name" name="name"
+                              required="required" placeholder="First and last name">
+                            </p>
+                            <p>
+                              <label for="email">E-mail:</label><br>
+                              <input type="text" id="email" name="email"
+                              required="required" placeholder="E-mail address">
+                            </p>
+                            <p>
+                              <label for="street">Street:</label><br>
+                              <input type="text" id="street" name="Street"
+                              required="required" placeholder="Street name">
+                            </p>
+                            <p>
+                              <label for="house">House:</label><br>
+                              <input type="text" id="house" name="house"
+                              required="required" placeholder="House number">
+                            </p>
+                            <p>
+                              <label for="payment">Payment options:</label><br>
+                              <select id="payment" name="payment">
+                                  <option>Credit card</option>
+                                  <option>Debit card</option>
+                                  <option>Swish</option>
+                                  <option>Electronic bank transfers</option>
+                                  <option>Checks</option>
+                              </select>
+                            </p>
+                              <label for="gender">Gender:</label><br>
+                              <input type="radio" id="non-binary" name="gender" checked="checked">
+                              <label for="non-binary">Non-binary</label>
+                              <input type="radio" id="female" name="gender">
+                              <label for="female">Female</label>
+                              <input type="radio" id="male" name="gender">
+                              <label for="male">Male</label>
+                        </fieldset>
+                    </form>
+
+                    <!-- ändra här för fan -->
+                    <button type="submit"><img width="150px"
+                      src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+        </section>
+      </main>
+
+      <footer>
+        <hr>
+        <p>
+          &copy; 2020 Hypthetical Burgers Inc
+        </p>
+      </footer>
     </body>
 </html>
