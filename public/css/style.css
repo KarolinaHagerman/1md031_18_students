@@ -48,15 +48,48 @@ h2 {
   padding: 1em 0.5em;
 }
 
+#menu-app {
+  background-color: #f2f2f2;
+}
+
 h3 {
-  font-size: 1.4em;
+  color: #73020C;
+  font-size: 2vw;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.1em;
-  padding: 1em;
+  padding: 0.5em;
 }
 
-.burgers {
+.item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30%)
+}
+
+.item {
+  border: medium solid #fff;
+  width: 90%;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.item-pic {
+  width: 95%;
+  display: block;
+  margin: 1em auto;
+
+}
+
+ul {
+  margin-left: 8%;
+  list-style-type: circle;
+}
+
+.ingredients { font-weight: bold; }
+
+
+
+/*.burgers {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -96,7 +129,9 @@ h3, .burger ul { background-color: #f2f2f2; }
 
 .burger-pics { text-align: center; }
 
-.ingredients { font-weight: bold; }
+
+
+*/
 
 #information {
   padding: 1em;
