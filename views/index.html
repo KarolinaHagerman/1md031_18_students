@@ -5,6 +5,9 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="module" src="js/js_script.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
+        <script type="module" src="js/vue_script.js" defer></script>
     </head>
     <body>
       <header>
@@ -18,8 +21,23 @@
             <p>
               This is where you execute burger selection
             </p>
+          <div id="menu-app">
+            <div class="item-wrapper">
+              <div class="item" v-bind:class="className" v-for="item in items">
+                <h3>{{item.name}}</h3>
+                  <img class="item-pic" v-bind:src="item.imgURL">
+                  <ul>
+                    <li>{{item.kcal}} kCal</li>
+                    <li class="ingredients" v-if="item.gluten">Contains gluten</li>
+                    <li class="ingredients" v-if="item.lactose">Contains lactose</li>
+                    <li>{{item.description}}</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <div class="burgers">
+<!--            <div class="burgers">
               <div class="basic burger">
                 <h3>Basic Burger</h3>
                   <img src="https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png"
@@ -53,8 +71,7 @@
                       <li>Perfect if you want to be a chicken</li>
                   </ul>
               </div>
-           </div>
-        </section>
+           </div>-->
 
         <section id="information">
           <h2>Customer information</h2>
