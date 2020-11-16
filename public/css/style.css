@@ -63,7 +63,7 @@ h3 {
 
 .item-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 30%)
+  grid-template-columns: repeat(auto-fill, 33%)
 }
 
 .item {
@@ -71,6 +71,7 @@ h3 {
   width: 90%;
   padding: 0.5em;
   margin: 0.5em;
+  position: relative;
 }
 
 .item-pic {
@@ -83,11 +84,23 @@ h3 {
 ul {
   margin-left: 8%;
   list-style-type: circle;
+  margin-bottom: 3em;
 }
 
 .ingredients { font-weight: bold; }
 
+.item input.check, .item label { position: absolute;}
 
+.item input.check {
+  bottom: 0.6em;
+  right: 0.5em;
+}
+
+.item label {
+  position: absolute;
+  bottom: 0.35em;
+  right: 1.7em;
+}
 
 /*.burgers {
   display: grid;
@@ -139,12 +152,12 @@ h3, .burger ul { background-color: #f2f2f2; }
   color: #f2f2f2;
 }
 
-button {
+#order-button {
   padding: 1em;
   margin: 1em;
 }
 
-button:hover {
+#order-button:hover {
   border-style: solid;
   border-width: thick;
   border-color: #0d0d0d;
