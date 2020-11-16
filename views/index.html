@@ -6,8 +6,11 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="module" src="js/js_script.js" defer></script>
-        <script src="https://vuejs.org/js/vue.js" defer></script>
-        <script type="module" src="js/vue_script.js" defer></script>
+
+      <!-- VUE -->
+      <!--  <script src="https://vuejs.org/js/vue.js" defer></script>
+        <script type="module" src="js/vue_script.js" defer></script> -->
+
     </head>
     <body>
       <header>
@@ -16,6 +19,10 @@
         <h1>Welcome to BurgerHeaven Online</h1>
       </header>
       <main>
+
+<!-- ========================================================== -->
+
+<!-- VUE SOLUTION
         <section id="selection">
           <h2>Select burger</h2>
             <p>
@@ -32,46 +39,30 @@
                     <li class="ingredients" v-if="item.lactose">Contains lactose</li>
                     <li>{{item.description}}</li>
                   </ul>
+                  <input type="checkbox" class="check" id="choose" name="choose" value="Choose">
+                  <label for="choose">Choose this item</label><br>
               </div>
             </div>
           </div>
         </section>
 
-<!--            <div class="burgers">
-              <div class="basic burger">
-                <h3>Basic Burger</h3>
-                  <img src="https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png"
-                  alt="Basic Burger, a burger with meat, cheese, tomato, lettuce and onion"
-                  title="Basic Burger" width="200">
-                  <ul>
-                      <li>750 kCal</li>
-                      <li class="ingredients">Contains meat, gluten and lactose</li>
-                      <li>Perfect if you want to be basic</li>
-                  </ul>
-              </div>
-              <div class="boring burger">
-                <h3>Boring Burger</h3>
-                  <img src="https://www.max.se/contentassets/c02201e316004a52a08daff936eaa7c9/product_veggieburger.png"
-                  alt="Boring Burger, a burger with only meat and lettuce"
-                  title="Boring Burger" width="200">
-                  <ul>
-                      <li>500 kCal</li>
-                      <li class="ingredients">Contains meat, gluten and lactose</li>
-                      <li>Perfect if you want to really boring</li>
-                  </ul>
-              </div>
-              <div class="chicken burger">
-                <h3>Chicken Burger</h3>
-                  <img src="https://www.max.se/contentassets/23e325ee1e224f1e9ea8314c346e34c3/product_grilled-chicken-burger.png"
-                  alt="Chicken Burger, a burger with chicken, cheese, tomato, lettue and onion"
-                  title="Chicken Burger" width="200">
-                  <ul>
-                      <li>850 kCal</li>
-                      <li class="ingredients">Contains chicken, gluten and lactose</li>
-                      <li>Perfect if you want to be a chicken</li>
-                  </ul>
-              </div>
-           </div>-->
+-->
+
+<!-- ========================================================== -->
+
+      <!-- VANILLA JAVASCRIPT SOLUTION -->
+        <section id="selection">
+          <h2>Select burger</h2>
+            <p>
+              This is where you execute burger selection
+            </p>
+          <div id="menu-app">
+            <div class="item-wrapper">
+            </div>
+          </div>
+        </section>
+
+<!-- ========================================================== -->
 
         <section id="information">
           <h2>Customer information</h2>
@@ -112,25 +103,42 @@
                               </select>
                             </p>
                               <label for="gender">Gender:</label><br>
-                              <input type="radio" id="non-binary" name="gender" checked="checked">
+                              <input type="radio" id="Non-binary" name="gender" checked="checked">
                               <label for="non-binary">Non-binary</label>
-                              <input type="radio" id="female" name="gender">
+                              <input type="radio" id="Female" name="gender">
                               <label for="female">Female</label>
-                              <input type="radio" id="male" name="gender">
+                              <input type="radio" id="Male" name="gender">
                               <label for="male">Male</label>
                         </fieldset>
                     </form>
 
-                    <!-- ändra här för fan -->
-                    <button type="submit"><img width="150px"
-                      src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+                      <!-- ============================== -->
+
+                    <!-- VUE
+
+                    <div id="orders">
+                      <button id="order-button" type="submit" v-on:click="markDone()"><img width="150px"
+                          src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+                        -->
+
+                    <!-- ============================== -->
+
+                      <!-- VANILLA JAVASCRIPT -->
+
+                    <div id="orders">
+                      <button id="order-button" type="submit"><img width="150px"
+                          src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+                    </div>
+
+                    <!-- ============================== -->
+
         </section>
       </main>
 
       <footer>
         <hr>
         <p>
-          &copy; 2020 Hypthetical Burgers Inc
+          &copy; 2020 Hagerman Burgers
         </p>
       </footer>
     </body>
