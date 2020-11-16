@@ -1,4 +1,4 @@
-import { placeOrder, getInputVals } from './js_script.js'
+import * from './js_script.js'
 import { menu } from './menu.js'
 
 new Vue({
