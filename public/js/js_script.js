@@ -74,7 +74,7 @@ function createInfo(item, menuArray, i) {
 
   checkbox.setAttribute('type', 'checkbox');
   checkbox.setAttribute('class', 'check');
-  checkbox.setAttribute('id','choose');
+  checkbox.setAttribute('id',`${menuArray[i].name}`);
   label.setAttribute('for','choose');
 
   item.appendChild(checkbox);
@@ -115,8 +115,10 @@ function createList(item, menuArray, i) {
 // =============================================
 
 export function placeOrder() {
-  console.log("Button clicked!");
-  getInputVals();
+  let infoArray = getInputVals();
+  printInfo(infoArray);
+  let itemArray = getMenuItems();
+  printOrder(itemArray,itemArray.length>0);
 }
 
 // =============================================
@@ -126,10 +128,55 @@ export function getInputVals() {
   let inputVals = [];
   let inputArray = document.querySelectorAll('input[type=text]');
   for (let i=0; i<inputArray.length; i++) {
-    console.dir(inputArray[i].value);
     inputVals.push(inputArray[i].value);
   }
   inputVals.push(document.querySelector('#payment').value);
   inputVals.push(document.querySelector('input[type=radio]:checked').id);
-  console.log(inputVals);
+  return inputVals;
+}
+
+// =============================================
+
+//Saves checked menu item names in array
+export function getMenuItems() {
+  let checkedItems = document.querySelectorAll('input[type=checkbox]:checked');
+  let itemNames = [];
+  for (let i=0; i<checkedItems.length; i++) {
+    itemNames.push(checkedItems[i].id);
+  }
+  return itemNames;
+}
+
+// =============================================
+
+export function printInfo(infoArray) {
+  let orderHeadings = document.querySelectorAll('.orderheading');
+  orderHeadings[0].innerHTML = "Your info";
+  let infoList = document.querySelector('#customer-info');
+  for (let i=0; i<infoArray.length; i++) {
+    let listItem = document.createElement('li');
+    listItem.innerHTML = infoArray[i];
+    infoList.appendChild(listItem);
+  }
+}
+
+// =============================================
+
+export function printOrder(itemArray, isOrder) {
+  let orderHeadings = document.querySelectorAll('.orderheading');
+  let orderText = document.querySelector('#no-order');
+  orderHeadings[1].innerHTML = "Your order";
+  if (!isOrder) {
+    orderText.innerHTML = "Choose items above to order!";
+  }
+  else {
+    let itemList = document.querySelector('#order-info');
+    for (let i=0; i<itemArray.length; i++) {
+      let listItem = document.createElement('li');
+      listItem.innerHTML = itemArray[i];
+      itemList.appendChild(listItem);
+    }
+    orderText.innerHTML = "Thank you for your order!";
+  }
+
 }
