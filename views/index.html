@@ -64,74 +64,83 @@
 
 <!-- ========================================================== -->
 
-        <section id="information">
-          <h2>Customer information</h2>
-            <p>
-              This is where you provide necessary information
-            </p>
+        <section id="orderSection">
+          <div id="information">
+            <h2>Customer information</h2>
+              <p>
+                This is where you provide necessary information
+              </p>
 
-            <form method="POST" action="#">
-                        <fieldset>
-                            <p>
-                              <label for="name">Full name:</label><br>
-                              <input type="text" id="name" name="name"
-                              required="required" placeholder="First and last name">
-                            </p>
-                            <p>
-                              <label for="email">E-mail:</label><br>
-                              <input type="text" id="email" name="email"
-                              required="required" placeholder="E-mail address">
-                            </p>
-                            <p>
-                              <label for="street">Street:</label><br>
-                              <input type="text" id="street" name="Street"
-                              required="required" placeholder="Street name">
-                            </p>
-                            <p>
-                              <label for="house">House:</label><br>
-                              <input type="text" id="house" name="house"
-                              required="required" placeholder="House number">
-                            </p>
-                            <p>
-                              <label for="payment">Payment options:</label><br>
-                              <select id="payment" name="payment">
-                                  <option>Credit card</option>
-                                  <option>Debit card</option>
-                                  <option>Swish</option>
-                                  <option>Electronic bank transfers</option>
-                                  <option>Checks</option>
-                              </select>
-                            </p>
-                              <label for="gender">Gender:</label><br>
-                              <input type="radio" id="Non-binary" name="gender" checked="checked">
-                              <label for="non-binary">Non-binary</label>
-                              <input type="radio" id="Female" name="gender">
-                              <label for="female">Female</label>
-                              <input type="radio" id="Male" name="gender">
-                              <label for="male">Male</label>
-                        </fieldset>
-                    </form>
+              <form method="POST" action="#">
+                          <fieldset>
+                              <p>
+                                <label for="name">Full name:</label><br>
+                                <input type="text" id="name" name="name"
+                                required="required" placeholder="First and last name">
+                              </p>
+                              <p>
+                                <label for="email">E-mail:</label><br>
+                                <input type="text" id="email" name="email"
+                                required="required" placeholder="E-mail address">
+                              </p>
+                              <p>
+                                <label for="street">Street:</label><br>
+                                <input type="text" id="street" name="Street"
+                                required="required" placeholder="Street name">
+                              </p>
+                              <p>
+                                <label for="house">House:</label><br>
+                                <input type="text" id="house" name="house"
+                                required="required" placeholder="House number">
+                              </p>
+                              <p>
+                                <label for="payment">Payment options:</label><br>
+                                <select id="payment" name="payment">
+                                    <option>Credit card</option>
+                                    <option>Debit card</option>
+                                    <option>Swish</option>
+                                    <option>Electronic bank transfers</option>
+                                    <option>Checks</option>
+                                </select>
+                              </p>
+                                <label for="gender">Gender:</label><br>
+                                <input type="radio" id="Non-binary" name="gender" checked="checked">
+                                <label for="non-binary">Non-binary</label>
+                                <input type="radio" id="Female" name="gender">
+                                <label for="female">Female</label>
+                                <input type="radio" id="Male" name="gender">
+                                <label for="male">Male</label>
+                          </fieldset>
+                      </form>
+
+                        <!-- ============================== -->
+
+                      <!-- VUE
+
+                      <div id="orders">
+                        <button id="order-button" type="submit" v-on:click="markDone()"><img width="150px"
+                            src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+                          -->
 
                       <!-- ============================== -->
 
-                    <!-- VUE
+                        <!-- VANILLA JAVASCRIPT -->
 
-                    <div id="orders">
-                      <button id="order-button" type="submit" v-on:click="markDone()"><img width="150px"
-                          src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
-                        -->
+                      <div id="orders">
+                        <button id="order-button" type="submit"><img width="150px"
+                            src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
+                      </div>
+          </div>
+          <div id="placedOrder">
 
-                    <!-- ============================== -->
-
-                      <!-- VANILLA JAVASCRIPT -->
-
-                    <div id="orders">
-                      <button id="order-button" type="submit"><img width="150px"
-                          src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
-                    </div>
-
-                    <!-- ============================== -->
-
+                    <h2 class="orderheading"></h2>
+                      <ul id="customer-info">
+                      </ul>
+                    <h2 class="orderheading"></h2>
+                      <ul id="order-info">
+                      </ul>
+                      <h3 id="no-order"></h3>
+          </div>
         </section>
       </main>
 
