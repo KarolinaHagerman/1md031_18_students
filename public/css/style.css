@@ -102,55 +102,19 @@ ul {
   right: 1.7em;
 }
 
-/*.burgers {
+#orderSection {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: #fff;
-  color: #F24162;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "basic boring chicken"
-}
-
-.burger {
-  border: thick solid #f2f2f2;
-  color: #0D0D0D;
-  border-radius: 5px;
-  text-align: center;
-}
-
-h3, .burger ul { background-color: #f2f2f2; }
-
-.burger ul {
-  text-align: left;
-  padding: 1em;
-}
-
-.basic {
-    grid-area: basic;
-}
-.boring {
-    grid-area: boring;
-}
-.chicken {
-    grid-area: chicken;
-}
-.d {
-    grid-column: 2 ;
-    grid-row: 2 ;
-}
-
-.burger-pics { text-align: center; }
-
-
-
-*/
-
-#information {
+    "info order";
   padding: 1em;
   background-color: #F24162;
   color: #f2f2f2;
 }
+
+#information { grid-area: info; }
+#placedOrder { grid-area: order; }
 
 #order-button {
   padding: 1em;
