@@ -12,7 +12,6 @@ body p {
 }
 
 header {
-  height: ;
   overflow: hidden;
 }
 
@@ -38,7 +37,7 @@ h1 {
   margin-top: -50%;
   margin-left: 0.1em;
   font-size: 3em;
-  padding: 0.7em 14%;
+  padding: 0.7em 17%;
   background-color: #F24162;
   opacity: 0.9;
 }
@@ -115,6 +114,13 @@ ul {
 
 #information { grid-area: info; }
 #placedOrder { grid-area: order; }
+
+a {
+  color: #73020C;
+  font-weight: normal;
+}
+
+a:hover { font-weight: bolder;; }
 
 #order-button {
   padding: 1em;
