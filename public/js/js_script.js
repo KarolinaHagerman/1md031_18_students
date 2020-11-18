@@ -1,5 +1,7 @@
 import { menu } from './menu.js'
 
+'use strict';
+
 //JAVASCRIPT VANILLA
 main();
 
@@ -115,10 +117,24 @@ function createList(item, menuArray, i) {
 // =============================================
 
 export function placeOrder() {
+  clearPrevious();
   let infoArray = getInputVals();
   printInfo(infoArray);
   let itemArray = getMenuItems();
   printOrder(itemArray,itemArray.length>0);
+}
+
+// =============================================
+
+export function clearPrevious() {
+  let infoList = document.querySelector('#customer-info');
+  while (infoList.firstChild) {
+      infoList.removeChild(infoList.lastChild);
+    }
+  let itemList = document.querySelector('#order-info');
+  while (itemList.firstChild) {
+      itemList.removeChild(itemList.lastChild);
+    }
 }
 
 // =============================================
