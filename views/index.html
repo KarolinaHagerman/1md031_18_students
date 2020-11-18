@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Page title shown in window title</title>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <title>Hagerman Burgers</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" href="css/deli-very.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- ========================================================== -->
+
+<!-- VUE -->
+        <script src="/vue/vue.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
+        <script type="module" src="js/vue_script.js" defer></script>
+
+<!-- ========================================================== -->
+
+<!-- VANILLA JAVASCRIPT
         <script type="module" src="js/js_script.js" defer></script>
 
-      <!-- VUE -->
-      <!--  <script src="https://vuejs.org/js/vue.js" defer></script>
-        <script type="module" src="js/vue_script.js" defer></script> -->
+-->
+<!-- ========================================================== -->
 
     </head>
     <body>
       <header>
         <img id="header-pic" src="https://visitrattvik.se/wp-content/uploads/2019/11/diner45-restaurang-rattvik-9-1.jpg"
-          alt="The inside of BurgerHeaven" title="BurgerHeaven">
-        <h1>Welcome to BurgerHeaven Online</h1>
+          alt="The inside of Hagerman Burgers" title="HagermanBurgers">
+        <h1>Welcome to Hagerman Burgers</h1>
       </header>
       <main>
 
 <!-- ========================================================== -->
 
-<!-- VUE SOLUTION
+<!-- VUE -->
         <section id="selection">
           <h2>Select burger</h2>
             <p>
@@ -30,7 +42,7 @@
             </p>
           <div id="menu-app">
             <div class="item-wrapper">
-              <div class="item" v-bind:class="className" v-for="item in items">
+              <div class="item" v-for="item in items">
                 <h3>{{item.name}}</h3>
                   <img class="item-pic" v-bind:src="item.imgURL">
                   <ul>
@@ -39,18 +51,16 @@
                     <li class="ingredients" v-if="item.lactose">Contains lactose</li>
                     <li>{{item.description}}</li>
                   </ul>
-                  <input type="checkbox" class="check" id="choose" name="choose" value="Choose">
+                  <input type="checkbox" class="check" v-bind:id="item.name" name="choose" value="Choose">
                   <label for="choose">Choose this item</label><br>
               </div>
             </div>
           </div>
         </section>
 
--->
-
 <!-- ========================================================== -->
 
-      <!-- VANILLA JAVASCRIPT SOLUTION -->
+      <!-- VANILLA JAVASCRIPT
         <section id="selection">
           <h2>Select burger</h2>
             <p>
@@ -61,7 +71,7 @@
             </div>
           </div>
         </section>
-
+-->
 <!-- ========================================================== -->
 
         <section id="orderSection">
@@ -84,16 +94,6 @@
                                 required="required" placeholder="E-mail address">
                               </p>
                               <p>
-                                <label for="street">Street:</label><br>
-                                <input type="text" id="street" name="Street"
-                                required="required" placeholder="Street name">
-                              </p>
-                              <p>
-                                <label for="house">House:</label><br>
-                                <input type="text" id="house" name="house"
-                                required="required" placeholder="House number">
-                              </p>
-                              <p>
                                 <label for="payment">Payment options:</label><br>
                                 <select id="payment" name="payment">
                                     <option>Credit card</option>
@@ -103,6 +103,7 @@
                                     <option>Checks</option>
                                 </select>
                               </p>
+                              <p>
                                 <label for="gender">Gender:</label><br>
                                 <input type="radio" id="Non-binary" name="gender" checked="checked">
                                 <label for="non-binary">Non-binary</label>
@@ -110,37 +111,70 @@
                                 <label for="female">Female</label>
                                 <input type="radio" id="Male" name="gender">
                                 <label for="male">Male</label>
+                              </p>
                           </fieldset>
                       </form>
 
-                        <!-- ============================== -->
+                      <h3> Click on your position:</h3>
+                        <div class="view-box">
+                          <div id="dots" v-on:click="displayOrder">
+                            <div
+                              v-for="(order, key) in newOrder"
+                              v-bind:style="{ left: newOrder.details.x + 'px', top: newOrder.details.y + 'px'}">
+                              T
+                            </div>
+                          </div>
+                        </div>
+                        <p><a href="/dispatcher" target="_blank">Click here to open dispatcher in new window</a>.</p>
 
-                      <!-- VUE
+<!-- ========================================================== -->
+
+      <!-- VUE -->
 
                       <div id="orders">
-                        <button id="order-button" type="submit" v-on:click="markDone()"><img width="150px"
+                        <button id="order-button" type="submit" v-on:click="buttonClicked()"><img width="150px"
                             src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
-                          -->
+                      </div>
 
-                      <!-- ============================== -->
+          </div>
 
-                        <!-- VANILLA JAVASCRIPT -->
+          <div id="placedOrder" v-if="clicked">
+            <h2 class="orderheading">Your info</h2>
+              <ul id="customer-info">
+                <li v-for="info in customerInfo">{{info}}</li>
+              </ul>
+            <h2 class="orderheading">Your order</h2>
+              <ul id="order-info">
+                <li v-for="item in orderedItems">{{item}}</li>
+              </ul>
+              <h3 id="no-order"></h3>
+          </div>
+
+
+<!-- ========================================================== -->
+
+    <!-- VANILLA JAVASCRIPT
 
                       <div id="orders">
                         <button id="order-button" type="submit"><img width="150px"
                             src="https://store.portlandna.com/wp-content/uploads/2020/08/placeorder.png"></button>
                       </div>
+
           </div>
           <div id="placedOrder">
 
-                    <h2 class="orderheading"></h2>
-                      <ul id="customer-info">
-                      </ul>
-                    <h2 class="orderheading"></h2>
-                      <ul id="order-info">
-                      </ul>
-                      <h3 id="no-order"></h3>
+            <h2 class="orderheading"></h2>
+              <ul id="customer-info">
+              </ul>
+            <h2 class="orderheading"></h2>
+              <ul id="order-info">
+              </ul>
+              <h3 id="no-order"></h3>
           </div>
+
+-->
+  <!-- ======================================================= -->
+
         </section>
       </main>
 
