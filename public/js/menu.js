@@ -1,4 +1,4 @@
-//JSON
+//JSON, my menu
 export let menu = [
 {
   "name":"Basic Burger",
