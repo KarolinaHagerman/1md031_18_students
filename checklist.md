@@ -64,11 +64,11 @@ Create a vue_script.js file which contains:
 ## 05 Messaging
 
 - [x] Exchange the field for the customer's address with the interactive map
-- [ ] Location information from the map should be send to the dispatcher view when pressing the "order" button
-- [ ] In the dispatcher view, you should see the following for every order:
-    - [ ] A location on the map
-    - [ ] The order information
-    - [ ] The customer information
+- [x] Location information from the map should be send to the dispatcher view when pressing the "order" button
+- [x] In the dispatcher view, you should see the following for every order:
+    - [x] A location on the map
+    - [x] The order information
+    - [x] The customer information
     
 ## Optional
 - [ ] Set the orderID on client side so one customer can make multiple orders
