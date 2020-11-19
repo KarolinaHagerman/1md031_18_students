@@ -3,6 +3,8 @@ import { menu } from './menu.js'
 'use strict';
 
 //JAVASCRIPT VANILLA
+//OBS att vanilla-lösningen inte funkar med dispatcher,
+//men den skriver ut all info på sidan på samma sätt som vue-lösningen
 main();
 
 function main() {
