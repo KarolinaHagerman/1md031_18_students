@@ -120,7 +120,7 @@
                           <div id="dots" v-on:click="displayOrder">
                             <div
                               v-for="(order, key) in newOrder"
-                              v-bind:style="{ left: newOrder.details.x + 'px', top: newOrder.details.y + 'px'}">
+                              v-bind:style="{ left: newOrder.x + 'px', top: newOrder.y + 'px'}">
                               T
                             </div>
                           </div>
