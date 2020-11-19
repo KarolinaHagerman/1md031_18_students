@@ -1,3 +1,6 @@
+//import { placeOrder, getInputVals, printInfo, getMenuItems, printOrder, clearPrevious} from './js_script.js'
+//import { menu } from './menu.js'
+
 /*jslint es5:true, indent: 2 */
 /*global Vue, io */
 /* exported vm */
